@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login.component';
+import { componentFactoryName } from '@angular/compiler';
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
@@ -26,6 +27,10 @@ describe('LoginComponent', () => {
   });
   it('can load instance', () => {
     expect(component).toBeTruthy();
+  });
+  it('can load instance', () => {
+    fixture.detectChanges();
+    component.ngOnInit();
   });
   describe('loginUser', () => {
     it('makes expected calls', () => {
